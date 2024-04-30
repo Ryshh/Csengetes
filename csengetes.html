@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Csengetes</title>
+</head>
+<body>
+    <div class="container">
+        <h1></h1>
+        <div class="info"></div>
+        <button onclick="getCurrentTime()">refresh</button>
+    </div>
+    
+    <script src="data.js"></script>
+    <script>
+        //console.log(bellSchedule);
+
+        function getCurrentTime() 
+        {
+            let now = new Date()
+            let time = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0')
+
+            return time
+        }
+        let actualTime = getCurrentTime()
+        document.querySelector('h1').innerHTML = getCurrentTime()
+
+        function info() 
+        {
+            let current = bellSchedule.find(obj => actualTime >= obj.from && actualTime <= obj.to)
+            let infoStr = ''
+            if (current){infoStr = `Most a/az ${current.id}.óra van és a ${current.to}-ig tart.`}
+            else {infoStr=`Most szünet van...`}
+            
+            return infoStr
+        }
+        document.querySelector('.info').innerHTML = info()
+    </script>
+</body>
+</html>

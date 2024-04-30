@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Csengetési rend</title>
+</head>
+<body class="w-screen h-screen flex flex-col items-center justify-center bg-slate-500">
+    <div class="container w-[500px] bg-slate-300 rounded p-3 shadow shadow-slate-800">
+        <div class="flex items-center justify-center">
+            <span class="m-3">
+                <input type="radio" name="duration" id="h45" value="h45" checked>
+                <label for="h45">45</label>
+            </span>
+            <span>
+                <input type="radio" name="duration" id="h40" value="h40">
+                <label for="h40">40</label>
+            </span>
+            <span class="m-3">
+                <input type="radio" name="duration" id="h35" value="h35">
+                <label for="h35">35</label>
+            </span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+            <h1 class="font-semibold text-[32px]"></h1>
+            <div class="info"></div>
+            <button onclick="refresh()" class="bg-blue-600 text-white w-[99.5%] p-5 flex flex-col items-center justify-center rounded">refresh</button>
+        </div>
+    </div>
+
+    <script src="data_radio.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
